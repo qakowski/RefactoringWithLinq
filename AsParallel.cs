@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace RefactoringWithLinq
 {
-    class AsParallel : LinqRefactor<List<int>>
+    class AsParallel : LinqRefactor<IEnumerable<int>>
     {
-        public override List<int> WithLinq()
+        public override IEnumerable<int> WithLinq()
         {
             List<int> Qsp = new List<int>();
             for (int i = 0; i < 2; i++)
@@ -14,7 +14,7 @@ namespace RefactoringWithLinq
             return Qsp;
         }
 
-        public override List<int> WithoutLinq()
+        public override IEnumerable<int> WithoutLinq()
         {
             List<int> Qs = new List<int>();
             for (int i = 0; i < 2; i++)
